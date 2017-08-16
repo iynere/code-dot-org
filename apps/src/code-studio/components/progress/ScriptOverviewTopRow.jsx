@@ -5,7 +5,6 @@ import Button from '@cdo/apps/templates/Button';
 import ProgressDetailToggle from '@cdo/apps/templates/progress/ProgressDetailToggle';
 import { ViewType } from '@cdo/apps/code-studio/stageLockRedux';
 import AssignToSection from '@cdo/apps/templates/courseOverview/AssignToSection';
-import experiments, { SECTION_FLOW_2017 } from '@cdo/apps/util/experiments';
 
 const styles = {
   buttonRow: {
@@ -78,8 +77,7 @@ const ScriptOverviewTopRow = React.createClass({
             />
           </div>
         )}
-        {!professionalLearningCourse && viewAs === ViewType.Teacher &&
-            experiments.isEnabled(SECTION_FLOW_2017) && (
+        {!professionalLearningCourse && viewAs === ViewType.Teacher && (
           <AssignToSection
             sectionsInfo={sectionsInfo}
             courseId={currentCourseId}
